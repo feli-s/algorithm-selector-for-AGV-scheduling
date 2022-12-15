@@ -1,15 +1,5 @@
 """
 Solves a flexible jobshop problems with the CP-SAT solver.
-
-A jobshop is a standard scheduling problem when you must sequence a
-series of task_types on a set of machines. Each job contains one task_type per
-machine. The order of execution and the length of each job on each
-machine is task_type dependent.
-The objective is to minimize the maximum completion time of all
-jobs. This is called the makespan.
-
-This script uses the Google ORTOOLS solver for the constraint programming model.
-
 """
 import collections
 import datetime
@@ -65,14 +55,10 @@ def read_instance_FJSSP(instance):
             jobs.append(jobs_list)
 
         for operation in jobs:
-            #TODO: different task calculation (not first line, maybe delete first line and just count len(operation)
-            #nb_tasks = operation[0]
             nb_tasks = len(operation)
             tasklist = []
             n = 1
             while n < nb_tasks:
-            #for i in range(1, nb_tasks+1):
-           #for i in range(1, nb_tasks-1):
                 k = operation[n]  # 1
                 f = n + 1
                 tuple = [(operation[f], operation[f + 1]) for f in range(f, n+k*2, 2)]
@@ -84,7 +70,6 @@ def read_instance_FJSSP(instance):
 
 
 def flexible_jobshop(data, AGVs, name):
-    """Solve a small flexible jobshop problem."""
     # Data part.
     jobs = data
     instance = name
@@ -234,8 +219,7 @@ def flexible_jobshop(data, AGVs, name):
     print('  - conflicts : %i' % solver.NumConflicts())
     print('  - branches  : %i' % solver.NumBranches())
     print('  - wall time : %f s' % solver.WallTime())
-
-    #return instance, obj_makespan, solving_time, all_machines, assigned_jobs_fjssp, num_jobs
+    
     return instance, obj_makespan, solving_time
 
 def draw_ganttchart(all_machines, assigned_jobs_fjssp, num_jobs):
@@ -259,13 +243,7 @@ def draw_ganttchart(all_machines, assigned_jobs_fjssp, num_jobs):
     pyplt(fig, filename=r"./GanttChart_FJSSP.html", auto_open=True)
 
 
-#instance = "FJSSP1test.fjs"
-#data, nb_AGVs, name = read_instance_FJSSP(instance)
-#instance, makespan, solving_time, all_machines, assigned_jobs_fjssp, num_jobs = flexible_jobshop(data, nb_AGVs, name)
-
-#draw_ganttchart(all_machines, assigned_jobs_fjssp, num_jobs)
-
-path_of_directories = r'C:\Users\felis\Coding\ML_SELECTOR_ALGORITHMS\Instances\Job_Data\Barnes\Text'
+path_of_directories = r'[..]'
 cols = ['instance', 'makespan', 'solving time', 'solver']
 files = []
 lst = []
