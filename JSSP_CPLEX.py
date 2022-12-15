@@ -14,8 +14,6 @@ def read_instance(filename):
     with open(filename, 'r') as file:
         NB_JOBS, NB_MACHINES = [int(v) for v in file.readline().split()]
         JOBS = [[int(v) for v in file.readline().split()] for i in range(NB_JOBS)]
-        #print(NB_MACHINES,NB_JOBS)
-        #print(JOBS)
 
     return NB_JOBS, NB_MACHINES, JOBS, instance
 
@@ -83,11 +81,7 @@ def CPLEX_JSSP(NB_JOBS, NB_MACHINES, JOBS):
         visu.show()'''
 
 
-#NB_JOBS, NB_MACHINES, JOBS, instance = read_instance("JSSP1.txt")
-#instance, makespan, solving_time = CPLEX_JSSP(NB_JOBS, NB_MACHINES, JOBS)
-
-
-path_of_directories = r'C:\Users\felis\Coding\ML_SELECTOR_ALGORITHMS\Instances\JSSP_instances'
+path_of_directories = r'C:\[..]'
 cols = ['instance', 'makespan', 'solving time', 'solver']
 files = []
 lst = []
