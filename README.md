@@ -1,5 +1,5 @@
-# jssp-fjssp-constraint-programming-solving
-This repository stores code about the JSSP and FJSSP scheduling problem solved with two constraint programming solvers: IBM CPLEX CP Optimizer and Google's OR-Tools..
+# jssp-fjssp-algorithm-selector
+This repository stores code about the JSSP and FJSSP scheduling problem solved with two constraint programming solvers: IBM CPLEX CP Optimizer and Google's OR-Tools. Additionally, machine learning algorithms serve to make future predictions on the most suitable algorithm for an incoming instance 
 
 The data input is aligned with the benchmark test instances available in literature and is strucutred as follows for JSSP problems:
 
