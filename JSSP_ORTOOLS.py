@@ -148,12 +148,7 @@ def ORTOOLS_JSSP(data):
     return makespan, solving_time
 
 
-#data, name = read_instance_JSSP("JSSP2.txt")
-
-#print(data)
-
-
-path_of_directories = r'C:\Users\felis\Coding\ML_SELECTOR_ALGORITHMS\Instances\JSSP_instances'
+path_of_directories = r'C:\[..]'
 cols = ['instance', 'makespan', 'solving time', 'solver']
 files = []
 lst = []
