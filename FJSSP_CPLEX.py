@@ -39,14 +39,10 @@ def read_instance_FJSSP(instance):
             jobs.append(jobs_list)
 
         for operation in jobs:
-            #TODO: different task calculation (not first line, maybe delete first line and just count len(operation)
-            #nb_tasks = operation[0]
             nb_tasks = len(operation)
             tasklist = []
             n = 1
             while n < nb_tasks:
-            #for i in range(1, nb_tasks+1):
-           #for i in range(1, nb_tasks-1):
                 k = operation[n]  # 1
                 f = n + 1
                 tuple = [(operation[f], operation[f + 1]) for f in range(f, n+k*2, 2)]
@@ -58,7 +54,6 @@ def read_instance_FJSSP(instance):
 
 
 def flexible_jobshop_CPLEX(data, AGVs, name, nb_jobs):
-    """Solve a small flexible jobshop problem."""
     # Data part.
     jobs = data
     instance = name
@@ -205,11 +200,7 @@ def flexible_jobshop_CPLEX(data, AGVs, name, nb_jobs):
     return instance, makespan, solve_time
 
 
-#instance = "FJSSP1test.fjs"
-#data, nb_AGVs, name, nb_jobs = read_instance_FJSSP(instance)
-#instance, makespan, solve_time = flexible_jobshop_CPLEX(data, nb_AGVs, name, nb_jobs)
-
-path_of_directories = r'C:\Users\felis\Coding\ML_SELECTOR_ALGORITHMS\Instances\Job_Data\Barnes\Text'
+path_of_directories = r'C:\[..]'
 cols = ['instance', 'makespan', 'solving time', 'solver']
 files = []
 lst = []
