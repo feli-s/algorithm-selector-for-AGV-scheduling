@@ -1,4 +1,4 @@
-﻿;instance;jobs;AGVs;Operations;Job_AGV_ratio;Skewness;Mean operation duration per job;Max job duration;Min job duration;Max_operation_duration;Min_operation_duration;algorithm
+ID;instance;jobs;AGVs;Operations;Job_AGV_ratio;Skewness;Mean operation duration per job;Max job duration;Min job duration;Max_operation_duration;Min_operation_duration;algorithm
 0;abz5;10;10;100;1;1;77,73;859;704;99;50;ORTOOLS
 1;abz6;10;10;100;1;1;59,46;742;486;98;20;ORTOOLS
 2;abz7;20;15;225;1,333333333;1,333333333;24,55333333;410;322;40;11;ORTOOLS
